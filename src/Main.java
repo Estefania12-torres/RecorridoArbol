@@ -2,16 +2,23 @@
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Intro with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println();
+        Node root = new Node(1);
+        root.izquierdo = new Node(2);
+        root.derecho = new Node(3);
+        root.izquierdo.izquierdo = new Node(4);
+        root.izquierdo.derecho = new Node(5);
 
-        // Press Mayús+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.print("RECORRIDO INORDEN: ");
+        root.inOrden(root);
+        System.out.println();
 
-            // Press Mayús+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.print("RECORRIDO PREORDEN: ");
+        root.preOrden(root);
+        System.out.println();
+
+        System.out.print("RECORRIDO POSTORDEN: ");
+        root.postOrden(root);
+        System.out.println();
     }
 }
